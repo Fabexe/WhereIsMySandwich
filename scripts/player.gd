@@ -15,15 +15,16 @@ func _physics_process(_delta):
 
 # Set player animation related to his direction
 func _process(_delta):
+	var direction = $AnimatedSprite2D
 	if Input.is_action_pressed("up"):
-		$AnimatedSprite2D.play("walk_up")
-	if Input.is_action_pressed("down"):
-		$AnimatedSprite2D.play("walk_down")
-	if Input.is_action_pressed("left"):
-		$AnimatedSprite2D.flip_h = true
-		$AnimatedSprite2D.play("walk_x")
-	if Input.is_action_pressed("right"):
-		$AnimatedSprite2D.flip_h = false
-		$AnimatedSprite2D.play("walk_x")
+		direction.play("walk_up")
+	elif Input.is_action_pressed("down"):
+		direction.play("walk_down")
+	elif Input.is_action_pressed("left"):
+		direction.flip_h = true
+		direction.play("walk_x")
+	elif Input.is_action_pressed("right"):
+		direction.flip_h = false
+		direction.play("walk_x")
 	else:
-		$AnimatedSprite2D.frame = 0
+		direction.stop()
