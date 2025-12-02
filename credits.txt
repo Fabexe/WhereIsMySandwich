@@ -1,0 +1,3 @@
+Fonts :
+    - Ari-W9500 made by Catterio Sylt
+    - VHS/VCR OSD made by Azriel Ayisi
